@@ -69,10 +69,12 @@ current_count = 0
 for line in sys.stdin:
     category = line.strip()
     if current_category and current_category != category:
-        print(f"{current_category}\t{current_count}")
+        if current_count > 114:
+            print(f"{current_category}\t{current_count}")
         current_count = 0
     current_category = category
     current_count += 1
 
-if current_category:
+if current_category and current_count > 114:
     print(f"{current_category}\t{current_count}")
+
