@@ -59,3 +59,20 @@ for line in sys.stdin:
 
 # write the last result to stdout
 sys.stdout.write("{0}\t{1}\n".format(previous_key, sum_of_values))
+
+# reducer.py
+import sys
+
+current_category = None
+current_count = 0
+
+for line in sys.stdin:
+    category = line.strip()
+    if current_category and current_category != category:
+        print(f"{current_category}\t{current_count}")
+        current_count = 0
+    current_category = category
+    current_count += 1
+
+if current_category:
+    print(f"{current_category}\t{current_count}")
