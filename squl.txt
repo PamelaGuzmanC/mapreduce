@@ -7,3 +7,6 @@ GROUP BY category;
 SELECT category, COUNT(*) 
 FROM purchases 
 GROUP BY category;
+
+# Exercise 3
+.
