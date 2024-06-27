@@ -42,3 +42,13 @@ for line in sys.stdin:
     # With a tab (\t) between key and value
     # New line \n means new record
     sys.stdout.write("{0}\t{1}\n".format(payment, sales))
+
+    # mapper.py
+import sys
+
+for line in sys.stdin:
+    data = line.strip().split("\t")
+    if len(data) == 6:
+        date, time, store, item, category, sales = data
+        print(f"{category}\t{sales}")
+
