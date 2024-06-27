@@ -43,15 +43,15 @@ for line in sys.stdin:
     # New line \n means new record
     sys.stdout.write("{0}\t{1}\n".format(payment, sales))
 
-# mapper.py
+#!/usr/bin/env python
+
 import sys
 
 for line in sys.stdin:
     data = line.strip().split("\t")
-    if len(data) != 6:
-        raise ValueError("Invalid input: expected 6 elements")
-    date, time, store, item, category, sales = data
-    print("{0}\t{1}".format(category,sales))
+    if len(data) == 6:
+        date, time, store, item, category, sales = data
+        print("{0}\t{1}".format(category, sales))
 
 
 valid_categories = {"Computers", "Cameras", "Video Games"}
