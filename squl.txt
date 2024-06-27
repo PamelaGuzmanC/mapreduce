@@ -10,3 +10,9 @@ GROUP BY category;
 
 # Exercise 3
 .
+
+# Exercise 4
+SELECT category, SUM(sales) 
+FROM purchases 
+WHERE category IN ('Computers', 'Cameras', 'Video Games')
+GROUP BY category;
