@@ -51,7 +51,7 @@ for line in sys.stdin:
     if len(data) != 6:
         raise ValueError("Invalid input: expected 6 elements")
     date, time, store, item, category, sales = data
-    print(f{category}\t{sales})
+    print(f"{category}\t{sales}")
 
 
 valid_categories = {"Computers", "Cameras", "Video Games"}
@@ -61,4 +61,5 @@ for line in sys.stdin:
     if len(data) == 6:
         date, time, store, item, category, sales = data
         if category in valid_categories:
-            print(f{category}\t{sales})
+            print(f"{category}\t{sales}")
+

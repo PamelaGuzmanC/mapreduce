@@ -22,3 +22,8 @@ SELECT category, COUNT(*)
 FROM purchases 
 GROUP BY category 
 HAVING COUNT(*) > 114;
+
+# Exercise 6
+SELECT category, AVG(sales) 
+FROM purchases 
+GROUP BY category;

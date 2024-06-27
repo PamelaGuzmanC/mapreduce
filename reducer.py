@@ -64,17 +64,22 @@ sys.stdout.write("{0}\t{1}\n".format(previous_key, sum_of_values))
 import sys
 
 current_category = None
+current_sum = 0
 current_count = 0
 
 for line in sys.stdin:
-    category = line.strip()
+    category, sales = line.strip().split("\t")
+    sales = float(sales)
     if current_category and current_category != category:
-        if current_count > 114:
-            print(f"{current_category}\t{current_count}")
+        average = current_sum / current_count
+        print(f"{current_category}\t{average}")
+        current_sum = 0
         current_count = 0
     current_category = category
+    current_sum += sales
     current_count += 1
 
-if current_category and current_count > 114:
-    print(f"{current_category}\t{current_count}")
+if current_category:
+    average = current_sum / current_count
+    print(f"{current_category}\t{average}")
 
